@@ -26,9 +26,15 @@ type TaskResult struct {
 	IterationValue interface{}            `json:"iteration_value"`
 }
 
-// Point represents an X/Y coordinate for Chart.js line charts
-type Point struct {
+// PointLinear represents an X/Y coordinate for linear Chart.js line charts
+type PointLinear struct {
 	X float64 `json:"x"`
+	Y float64 `json:"y"`
+}
+
+// PointCategory represents an X/Y coordinate with a categorical string X-axis
+type PointCategory struct {
+	X string  `json:"x"`
 	Y float64 `json:"y"`
 }
 
@@ -81,17 +87,18 @@ func main() {
 	}
 
 	// Data arrays for Line Plots (Stats vs Iterations)
-	var falseInstr []Point
-	var trueInstr []Point
-	var falseTime []Point
-	var trueTime []Point
-	var falseExecTime []Point
-	var trueExecTime []Point
+	var falseInstr []PointLinear
+	var trueInstr []PointCategory
+	var falseTime []PointLinear
+	var trueTime []PointCategory
+	var falseExecTime []PointLinear
+	var trueExecTime []PointCategory
 
 	// Data arrays for Histogram (Distribution of Result Value)
 	var falseResults []float64
 	var trueResults []float64
 
+	uxhwTrial := 1
 	for _, r := range results {
 		// 1. Extract Iteration Value
 		var iter float64 = 1
@@ -127,28 +134,27 @@ func main() {
 
 		// Sort into UxHw true or false buckets
 		if r.Uxhw {
-			trueInstr = append(trueInstr, Point{X: iter, Y: instr})
-			trueTime = append(trueTime, Point{X: iter, Y: pTime})
-			trueExecTime = append(trueExecTime, Point{X: iter, Y: execTime})
+			trialLabel := fmt.Sprintf("trial-%d", uxhwTrial)
+			trueInstr = append(trueInstr, PointCategory{X: trialLabel, Y: instr})
+			trueTime = append(trueTime, PointCategory{X: trialLabel, Y: pTime})
+			trueExecTime = append(trueExecTime, PointCategory{X: trialLabel, Y: execTime})
 			trueResults = append(trueResults, outVal)
+			uxhwTrial++
 		} else {
-			falseInstr = append(falseInstr, Point{X: iter, Y: instr})
-			falseTime = append(falseTime, Point{X: iter, Y: pTime})
-			falseExecTime = append(falseExecTime, Point{X: iter, Y: execTime})
+			falseInstr = append(falseInstr, PointLinear{X: iter, Y: instr})
+			falseTime = append(falseTime, PointLinear{X: iter, Y: pTime})
+			falseExecTime = append(falseExecTime, PointLinear{X: iter, Y: execTime})
 			falseResults = append(falseResults, outVal)
 		}
 	}
 
 	// Sort line points by X (iteration value) to ensure lines draw cleanly left-to-right
-	sortPoints := func(pts []Point) {
+	sortLinearPoints := func(pts []PointLinear) {
 		sort.Slice(pts, func(i, j int) bool { return pts[i].X < pts[j].X })
 	}
-	sortPoints(falseInstr)
-	sortPoints(trueInstr)
-	sortPoints(falseTime)
-	sortPoints(trueTime)
-	sortPoints(falseExecTime)
-	sortPoints(trueExecTime)
+	sortLinearPoints(falseInstr)
+	sortLinearPoints(falseTime)
+	sortLinearPoints(falseExecTime)
 
 	// ----------------------------------------------------
 	// Prepare Histogram Buckets for the Outputs
@@ -221,28 +227,28 @@ func main() {
 	instrConfig := fmt.Sprintf(`{
 		"type": "line",
 		"data": { "datasets": [
-			{ "label": "Dynamic Instructions (Monte Carlo)", "data": %s, "borderColor": "red", "backgroundColor": "red", "fill": false, "tension": 0.1 },
-			{ "label": "Dynamic Instructions (Signaloid API)", "data": %s, "borderColor": "blue", "backgroundColor": "blue", "fill": false, "tension": 0.1 }
+			{ "label": "Dynamic Instructions (Monte Carlo)", "data": %s, "borderColor": "red", "backgroundColor": "red", "fill": false, "tension": 0.1, "xAxisID": "x" },
+			{ "label": "Dynamic Instructions (Signaloid API)", "data": %s, "borderColor": "blue", "backgroundColor": "blue", "fill": false, "tension": 0.1, "xAxisID": "x2" }
 		]},
-		"options": { "plugins": { "title": { "display": true, "text": "Dynamic Instructions vs Iterations" } }, "scales": { "x": { "type": "linear", "title": { "display": true, "text": "Iteration Value" } }, "y": { "title": { "display": true, "text": "Measured Value" } } } }
+		"options": { "plugins": { "title": { "display": true, "text": "Dynamic Instructions vs Iterations" } }, "scales": { "x": { "type": "linear", "position": "bottom", "title": { "display": true, "text": "Iteration Value" } }, "x2": { "type": "category", "position": "top", "title": { "display": true, "text": "UxHw Trials" }, "grid": { "drawOnChartArea": false } }, "y": { "title": { "display": true, "text": "Measured Value" } } } }
 	}`, string(falseInstrJSON), string(trueInstrJSON))
 
 	timeConfig := fmt.Sprintf(`{
 		"type": "line",
 		"data": { "datasets": [
-			{ "label": "Processor Time (s) (Monte Carlo)", "data": %s, "borderColor": "orange", "backgroundColor": "orange", "fill": false, "tension": 0.1 },
-			{ "label": "Processor Time (s) (Signaloid API)", "data": %s, "borderColor": "green", "backgroundColor": "green", "fill": false, "tension": 0.1 }
+			{ "label": "Processor Time (s) (Monte Carlo)", "data": %s, "borderColor": "orange", "backgroundColor": "orange", "fill": false, "tension": 0.1, "xAxisID": "x" },
+			{ "label": "Processor Time (s) (Signaloid API)", "data": %s, "borderColor": "green", "backgroundColor": "green", "fill": false, "tension": 0.1, "xAxisID": "x2" }
 		]},
-		"options": { "plugins": { "title": { "display": true, "text": "Processor Time vs Iterations" } }, "scales": { "x": { "type": "linear", "title": { "display": true, "text": "Iteration Value" } }, "y": { "title": { "display": true, "text": "Measured Value" } } } }
+		"options": { "plugins": { "title": { "display": true, "text": "Processor Time vs Iterations" } }, "scales": { "x": { "type": "linear", "position": "bottom", "title": { "display": true, "text": "Iteration Value" } }, "x2": { "type": "category", "position": "top", "title": { "display": true, "text": "UxHw Trials" }, "grid": { "drawOnChartArea": false } }, "y": { "title": { "display": true, "text": "Measured Value" } } } }
 	}`, string(falseTimeJSON), string(trueTimeJSON))
 
 	execTimeConfig := fmt.Sprintf(`{
 		"type": "line",
 		"data": { "datasets": [
-			{ "label": "Execution Time (ms) (Monte Carlo)", "data": %s, "borderColor": "purple", "backgroundColor": "purple", "fill": false, "tension": 0.1 },
-			{ "label": "Execution Time (ms) (Signaloid API)", "data": %s, "borderColor": "teal", "backgroundColor": "teal", "fill": false, "tension": 0.1 }
+			{ "label": "Execution Time (ms) (Monte Carlo)", "data": %s, "borderColor": "purple", "backgroundColor": "purple", "fill": false, "tension": 0.1, "xAxisID": "x" },
+			{ "label": "Execution Time (ms) (Signaloid API)", "data": %s, "borderColor": "teal", "backgroundColor": "teal", "fill": false, "tension": 0.1, "xAxisID": "x2" }
 		]},
-		"options": { "plugins": { "title": { "display": true, "text": "Execution Time vs Iterations" } }, "scales": { "x": { "type": "linear", "title": { "display": true, "text": "Iteration Value" } }, "y": { "title": { "display": true, "text": "Measured Value (ms)" } } } }
+		"options": { "plugins": { "title": { "display": true, "text": "Execution Time vs Iterations" } }, "scales": { "x": { "type": "linear", "position": "bottom", "title": { "display": true, "text": "Iteration Value" } }, "x2": { "type": "category", "position": "top", "title": { "display": true, "text": "UxHw Trials" }, "grid": { "drawOnChartArea": false } }, "y": { "title": { "display": true, "text": "Measured Value (ms)" } } } }
 	}`, string(falseExecTimeJSON), string(trueExecTimeJSON))
 
 	distConfig := fmt.Sprintf(`{
