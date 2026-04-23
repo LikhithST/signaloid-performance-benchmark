@@ -23,10 +23,15 @@ Software Engineer with 4 years of experience in the IT field at various companie
 <!-- TABLE_START -->
 | Method | Iterations | Dynamic Instructions | Processor Time (s) | Execution Time (ms) | Result |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Monte Carlo | 10,000 | 577,131 | 0.0198 | 934 | 106,000.00 |
-| Monte Carlo | 1,000,000 | 51,067,334 | 0.5649 | 1,394 | 106,000.00 |
-| Monte Carlo | 10,000,000 | 510,069,396 | 6.3186 | 7,127 | 105,999.67 |
-| **UxHw (Avg)** | **N/A** | **~2,510,000** | **~0.059** | **~1,432** | **106,128.00** |
+| Monte Carlo | 1 | 61,515 | 0.0107 | 876 | 106,450.17 |
+| Monte Carlo | 10 | 70,686 | 0.0133 | 915 | 106,056.25 |
+| Monte Carlo | 100 | 74,596 | 0.0154 | 971 | 105,985.44 |
+| Monte Carlo | 1,000 | 119,714 | 0.0117 | 867 | 106,023.17 |
+| Monte Carlo | 10,000 | 578,555 | 0.0183 | 830 | 105,986.62 |
+| Monte Carlo | 100,000 | 5,169,274 | 0.0668 | 901 | 105,999.25 |
+| Monte Carlo | 1,000,000 | 51,057,624 | 0.6161 | 1,520 | 106,000.32 |
+| Monte Carlo | 10,000,000 | 510,063,102 | 6.0507 | 6,941 | 106,000.22 |
+| **UxHw (Avg)** | **N/A** | **~75,652** | **~0.0136** | **~877** | **106,000.00** |
 <!-- TABLE_END -->
 
 ## Signaloid Execution Plots
@@ -40,13 +45,13 @@ The generated plots include:
 4. **`distChart.png`**: A clustered histogram showing the probability density distribution of the portfolio value calculation outputs.
 
 <!-- PLOTS_START -->
-![Dynamic Instructions](plots/20260423_212241/instrChart.png)
+![Dynamic Instructions](plots/20260423_215929/instrChart.png)
 
-![Processor Time](plots/20260423_212241/timeChart.png)
+![Processor Time](plots/20260423_215929/processorTimeChart.png)
 
-![Execution Time](plots/20260423_212241/execTimeChart.png)
+![Execution Time](plots/20260423_215929/execTimeChart.png)
 
-![Result Distribution](plots/20260423_212241/distChart.png)
+![Result Distribution](plots/20260423_215929/distChart.png)
 <!-- PLOTS_END -->
 
 ## Key Findings
