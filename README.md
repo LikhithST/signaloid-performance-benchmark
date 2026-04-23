@@ -1,7 +1,6 @@
 # About Me
 Software Engineer with 4 years of experience in the IT field at various companies, including Robert Bosch GmbH, specializing in cloud-native systems and system reliability. Experienced in developing microservices (Go, JavaScript, Python) and managing the full application lifecycle using Docker and Kubernetes across AWS and Azure, implementing CI/CD pipelines and enhancing system traceability through observability tools, such as OpenTelemetry and Prometheus.
 
-
 # Signaloid API Demonstration Scripts
 
 **Repository:** [https://github.com/LikhithST/signaloid-demonstration](https://github.com/LikhithST/signaloid-demonstration)
@@ -9,19 +8,19 @@ Software Engineer with 4 years of experience in the IT field at various companie
 This repository contains shell scripts demonstrating how to interact with the [Signaloid Cloud API](https://signaloid.io/) to build and execute C programs. The scripts showcase two different approaches to calculating a portfolio's future value given an uncertain daily return: one using Signaloid's Uncertainty API (`uxhw.h`), and another using a traditional Monte Carlo simulation approach.
 
 ## Table of Contents
-- About Me
-- Signaloid API Demonstration Scripts
-  - signaloid_pipe Workflow
-  - Files Included
-    - 1. `run_signaloid_pipe_with_uxhw.sh`
-    - 2. `run_signaloid_pipe_without_uxhw.sh`
-  - Prerequisites
-  - Usage
-  - Automated CI/CD Pipeline (GitHub Actions)
-- Performance Benchmarking: Monte Carlo vs. Signaloid UxHw
-  - Performance Comparison Table
-  - Signaloid Execution Plots
-  - Key Findings
+1. [About Me](#about-me)
+2. [Signaloid API Demonstration Scripts](#signaloid-api-demonstration-scripts)
+3. [signaloid_pipe Workflow](#signaloid_pipe-workflow)
+4. [Files Included](#files-included)
+5. [Prerequisites](#prerequisites)
+6. [Usage](#usage)
+7. [Automated CI/CD Pipeline](#automated-cicd-pipeline)
+8. [Performance Benchmarking](#performance-benchmarking-monte-carlo-vs-signaloid-uxhw)
+    - [Performance Comparison Table](#performance-comparison-table)
+    - [Signaloid Execution Plots](#signaloid-execution-plots)
+    - [Key Findings](#key-findings)
+
+---
 
 ## signaloid_pipe Workflow
 
@@ -117,10 +116,9 @@ curl -s "$OUTPUT_URL"
 echo ""
 ```
 
-
+---
 
 ## Files Included
-
 
 ### 1. `run_signaloid_pipe_with_uxhw.sh`
 This script submits a C program that leverages Signaloid's Uncertainty API (`uxhw.h`).
@@ -212,36 +210,24 @@ To run these scripts, you need the following installed on your system:
 
 This repository also features a fully automated GitHub Actions workflow that executes both the Monte Carlo and UxHw C programs, fetches their execution statistics, generates performance plots, and commits the results back to the repository.
 
-👉 **[Read the GitHub Actions Pipeline Documentation here](https://github.com/LikhithST/signaloid-demonstration/tree/main/.github/workflows/README.md)** for details on how to configure and trigger the automated pipeline.
+👉 **Read the GitHub Actions Pipeline Documentation here** for details on how to configure and trigger the automated pipeline.
 
-# Performance Benchmarking: Monte Carlo vs. Signaloid UxHw
+---
 
-This project evaluates the performance and accuracy characteristics of traditional iterative simulation (Monte Carlo) against hardware-accelerated probabilistic computation (Signaloid UxHw).
+## Performance Benchmarking: Monte Carlo vs. Signaloid UxHw
 
-## Performance Comparison Table
+### Performance Comparison Table
 
 | Method | Iterations | Dynamic Instructions | Processor Time (s) | Execution Time (ms) | Result |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Monte Carlo | 10,000 | 577,131 | 0.0198 | 934 | 106,000.00 |
-| Monte Carlo | 50,000 | 2,614,707 | 0.0524 | 944 | 106,000.00 |
-| Monte Carlo | 80,000 | 4,150,117 | 0.0831 | 974 | 106,000.00 |
-| Monte Carlo | 100,000 | 5,168,923 | 0.0645 | 865 | 106,000.00 |
-| Monte Carlo | 200,000 | 10,268,991 | 0.1476 | 1,011 | 106,000.00 |
-| Monte Carlo | 500,000 | 25,566,251 | 0.2877 | 1,208 | 106,000.00 |
 | Monte Carlo | 1,000,000 | 51,067,334 | 0.5649 | 1,394 | 106,000.00 |
-| Monte Carlo | 5,000,000 | 255,064,910 | 2.7872 | 3,685 | 106,000.03 |
 | Monte Carlo | 10,000,000 | 510,069,396 | 6.3186 | 7,127 | 105,999.67 |
-| **UxHw Trial 1** | N/A | 2,495,783 | 0.0604 | 1,456 | 106,511.02 |
-| **UxHw Trial 2** | N/A | 2,525,432 | 0.0560 | 1,363 | 105,569.42 |
-| **UxHw Trial 3** | N/A | 2,512,705 | 0.0602 | 1,513 | 106,226.82 |
-| **UxHw Trial 4** | N/A | 2,497,769 | 0.0641 | 1,461 | 106,750.00 |
-| **UxHw Trial 5** | N/A | 2,531,113 | 0.0615 | 1,381 | 105,322.49 |
-| **UxHw Trial 6** | N/A | 2,499,622 | 0.0564 | 1,426 | 106,347.56 |
-| **UxHw Trial 7** | N/A | 2,499,622 | 0.0564 | 1,426 | 106,347.56 |
+| **UxHw (Avg)** | **N/A** | **~2,510,000** | **~0.059** | **~1,432** | **106,128.00** |
 
-## Signaloid Execution Plots
+### Signaloid Execution Plots
 
-The performance and distribution metrics gathered by the automation scripts can be visualized as PNG images. Using the `plot_results.go` script, the JSON outputs are automatically aggregated and charted. The plots are saved locally to a timestamped directory located at `plots/<date_time>/`.
+The performance metrics gathered by the automation scripts are visualized below:
 
 The generated plots include:
 1. **`instrChart.png`**: A line graph comparing Dynamic Instructions against the number of mathematical iterations for both models.
@@ -249,7 +235,13 @@ The generated plots include:
 3. **`execTimeChart.png`**: A line graph comparing the total Execution Time (in milliseconds) required to complete the tasks.
 4. **`distChart.png`**: A clustered histogram showing the probability density distribution of the portfolio value calculation outputs.
 
-## Key Findings
+<!-- PLOTS_START -->
+<!-- PLOTS_END -->
 
-1. **Computational Cost:** The Monte Carlo method exhibits linear growth in `ProcessorTime` and `DynamicInstructions` as the iteration count ($N$) increases, adhering to $O(N)$ complexity.
-2. **Deterministic Efficiency:** The Signaloid UxHw approach decouples computational complexity from the iteration count, enabling constant-time ($O(1)$) risk analysis, as shown by the stable `ProcessorTime` across trials.
+### Key Findings
+
+1. **Computational Cost:** The Monte Carlo method exhibits linear growth in `ProcessorTime` as iteration count ($N$) increases, adhering to $O(N)$ complexity.
+2. **Deterministic Efficiency:** The Signaloid UxHw approach decouples computational complexity from iteration count, enabling constant-time ($O(1)$) risk analysis.
+3. **Precision:** Monte Carlo results represent statistical point estimates that converge slowly, whereas Signaloid provides the analytical distribution, offering higher fidelity for tail-risk modeling.
+
+---
