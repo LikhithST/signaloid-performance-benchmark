@@ -85,6 +85,8 @@ func main() {
 	var trueInstr []Point
 	var falseTime []Point
 	var trueTime []Point
+	var falseExecTime []Point
+	var trueExecTime []Point
 
 	// Data arrays for Histogram (Distribution of Result Value)
 	var falseResults []float64
@@ -107,12 +109,16 @@ func main() {
 		// 2. Extract Stats
 		var instr float64
 		var pTime float64
+		var execTime float64
 		if r.Stats != nil {
 			if i, ok := r.Stats["DynamicInstructions"].(float64); ok {
 				instr = i
 			}
 			if t, ok := r.Stats["ProcessorTime"].(float64); ok {
 				pTime = t
+			}
+			if e, ok := r.Stats["ExecutionTimeInMilliseconds"].(float64); ok {
+				execTime = e
 			}
 		}
 
@@ -123,10 +129,12 @@ func main() {
 		if r.Uxhw {
 			trueInstr = append(trueInstr, Point{X: iter, Y: instr})
 			trueTime = append(trueTime, Point{X: iter, Y: pTime})
+			trueExecTime = append(trueExecTime, Point{X: iter, Y: execTime})
 			trueResults = append(trueResults, outVal)
 		} else {
 			falseInstr = append(falseInstr, Point{X: iter, Y: instr})
 			falseTime = append(falseTime, Point{X: iter, Y: pTime})
+			falseExecTime = append(falseExecTime, Point{X: iter, Y: execTime})
 			falseResults = append(falseResults, outVal)
 		}
 	}
@@ -139,6 +147,8 @@ func main() {
 	sortPoints(trueInstr)
 	sortPoints(falseTime)
 	sortPoints(trueTime)
+	sortPoints(falseExecTime)
+	sortPoints(trueExecTime)
 
 	// ----------------------------------------------------
 	// Prepare Histogram Buckets for the Outputs
@@ -195,6 +205,8 @@ func main() {
 	trueInstrJSON, _ := json.Marshal(trueInstr)
 	falseTimeJSON, _ := json.Marshal(falseTime)
 	trueTimeJSON, _ := json.Marshal(trueTime)
+	falseExecTimeJSON, _ := json.Marshal(falseExecTime)
+	trueExecTimeJSON, _ := json.Marshal(trueExecTime)
 	labelsJSON, _ := json.Marshal(labels)
 	falseDistJSON, _ := json.Marshal(falseDist)
 	trueDistJSON, _ := json.Marshal(trueDist)
@@ -224,6 +236,15 @@ func main() {
 		"options": { "plugins": { "title": { "display": true, "text": "Processor Time vs Iterations" } }, "scales": { "x": { "type": "linear", "title": { "display": true, "text": "Iteration Value" } }, "y": { "title": { "display": true, "text": "Measured Value" } } } }
 	}`, string(falseTimeJSON), string(trueTimeJSON))
 
+	execTimeConfig := fmt.Sprintf(`{
+		"type": "line",
+		"data": { "datasets": [
+			{ "label": "Execution Time (ms) (Monte Carlo)", "data": %s, "borderColor": "purple", "backgroundColor": "purple", "fill": false, "tension": 0.1 },
+			{ "label": "Execution Time (ms) (Signaloid API)", "data": %s, "borderColor": "teal", "backgroundColor": "teal", "fill": false, "tension": 0.1 }
+		]},
+		"options": { "plugins": { "title": { "display": true, "text": "Execution Time vs Iterations" } }, "scales": { "x": { "type": "linear", "title": { "display": true, "text": "Iteration Value" } }, "y": { "title": { "display": true, "text": "Measured Value (ms)" } } } }
+	}`, string(falseExecTimeJSON), string(trueExecTimeJSON))
+
 	distConfig := fmt.Sprintf(`{
 		"type": "bar",
 		"data": {
@@ -238,6 +259,7 @@ func main() {
 
 	saveChart(instrConfig, filepath.Join(targetDir, "instrChart.png"))
 	saveChart(timeConfig, filepath.Join(targetDir, "timeChart.png"))
+	saveChart(execTimeConfig, filepath.Join(targetDir, "execTimeChart.png"))
 	saveChart(distConfig, filepath.Join(targetDir, "distChart.png"))
 
 	fmt.Println("All plots successfully generated!")
