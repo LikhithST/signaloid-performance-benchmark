@@ -1,13 +1,7 @@
 # About Me
 Software Engineer with 4 years of experience in the IT field at various companies, including Robert Bosch GmbH, specializing in cloud-native systems and system reliability. Experienced in developing microservices (Go, JavaScript, Python) and managing the full application lifecycle using Docker and Kubernetes across AWS and Azure, implementing CI/CD pipelines and enhancing system traceability through observability tools, such as OpenTelemetry and Prometheus.
 
-# Signaloid API Demonstration Scripts
-
-**Repository:** [https://github.com/LikhithST/signaloid-demonstration](https://github.com/LikhithST/signaloid-demonstration)
-
-This repository contains shell scripts demonstrating how to interact with the [Signaloid Cloud API](https://signaloid.io/) to build and execute C programs. The scripts showcase two different approaches to calculating a portfolio's future value given an uncertain daily return: one using Signaloid's Uncertainty API (`uxhw.h`), and another using a traditional Monte Carlo simulation approach.
-
-## Table of Contents
+# Table of Contents
 1. [About Me](#about-me)
 2. [Signaloid API Demonstration Scripts](#signaloid-api-demonstration-scripts)
 3. [signaloid_pipe Workflow](#signaloid_pipe-workflow)
@@ -22,7 +16,17 @@ This repository contains shell scripts demonstrating how to interact with the [S
 
 ---
 
-## signaloid_pipe Workflow
+
+# Signaloid API Demonstration Scripts
+
+**Repository:** [https://github.com/LikhithST/signaloid-demonstration](https://github.com/LikhithST/signaloid-demonstration)
+
+This repository contains shell scripts demonstrating how to interact with the [Signaloid Cloud API](https://signaloid.io/) to build and execute C programs. The scripts showcase two different approaches to calculating a portfolio's future value given an uncertain daily return: one using Signaloid's Uncertainty API (`uxhw.h`), and another using a traditional Monte Carlo simulation approach.
+
+
+---
+
+## Simple code execution workflow in signaloid 
 
 Both scripts follow the same automated pipeline via the Signaloid API:
 1. **Submit Build**: Uploads the embedded C code payload to be compiled.
@@ -210,7 +214,7 @@ To run these scripts, you need the following installed on your system:
 
 This repository also features a fully automated GitHub Actions workflow that executes both the Monte Carlo and UxHw C programs, fetches their execution statistics, generates performance plots, and commits the results back to the repository.
 
-👉 **Read the GitHub Actions Pipeline Documentation here** for details on how to configure and trigger the automated pipeline.
+**Read the GitHub Actions Pipeline Documentation here** for details on how to configure and trigger the automated pipeline.
 
 ---
 
@@ -218,12 +222,14 @@ This repository also features a fully automated GitHub Actions workflow that exe
 
 ### Performance Comparison Table
 
+<!-- TABLE_START -->
 | Method | Iterations | Dynamic Instructions | Processor Time (s) | Execution Time (ms) | Result |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Monte Carlo | 10,000 | 577,131 | 0.0198 | 934 | 106,000.00 |
 | Monte Carlo | 1,000,000 | 51,067,334 | 0.5649 | 1,394 | 106,000.00 |
 | Monte Carlo | 10,000,000 | 510,069,396 | 6.3186 | 7,127 | 105,999.67 |
 | **UxHw (Avg)** | **N/A** | **~2,510,000** | **~0.059** | **~1,432** | **106,128.00** |
+<!-- TABLE_END -->
 
 ### Signaloid Execution Plots
 
