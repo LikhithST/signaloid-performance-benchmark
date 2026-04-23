@@ -225,10 +225,15 @@ This repository also features a fully automated GitHub Actions workflow that exe
 <!-- TABLE_START -->
 | Method | Iterations | Dynamic Instructions | Processor Time (s) | Execution Time (ms) | Result |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Monte Carlo | 10,000 | 577,131 | 0.0198 | 934 | 106,000.00 |
-| Monte Carlo | 1,000,000 | 51,067,334 | 0.5649 | 1,394 | 106,000.00 |
-| Monte Carlo | 10,000,000 | 510,069,396 | 6.3186 | 7,127 | 105,999.67 |
-| **UxHw (Avg)** | **N/A** | **~2,510,000** | **~0.059** | **~1,432** | **106,128.00** |
+| Monte Carlo | 1 | 70,929 | 0.0240 | 916 | 106,727.50 |
+| Monte Carlo | 10 | 70,542 | 0.0136 | 874 | 106,067.39 |
+| Monte Carlo | 100 | 72,159 | 0.0227 | 870 | 105,950.31 |
+| Monte Carlo | 1,000 | 109,680 | 0.0140 | 941 | 106,000.88 |
+| Monte Carlo | 10,000 | 576,549 | 0.0188 | 926 | 106,012.42 |
+| Monte Carlo | 100,000 | 5,166,135 | 0.0653 | 824 | 106,003.11 |
+| Monte Carlo | 1,000,000 | 51,066,615 | 0.6142 | 1,538 | 106,000.80 |
+| Monte Carlo | 10,000,000 | 510,057,688 | 5.3549 | 6,222 | 106,000.14 |
+| **UxHw (Avg)** | **N/A** | **~75,652** | **~0.0175** | **~891** | **106,000.00** |
 <!-- TABLE_END -->
 
 ### Signaloid Execution Plots
@@ -242,13 +247,13 @@ The generated plots include:
 4. **`distChart.png`**: A clustered histogram showing the probability density distribution of the portfolio value calculation outputs.
 
 <!-- PLOTS_START -->
-![Dynamic Instructions](plots/20260423_212241/instrChart.png)
+![Dynamic Instructions](plots/20260423_213804/instrChart.png)
 
-![Processor Time](plots/20260423_212241/timeChart.png)
+![Processor Time](plots/20260423_213804/timeChart.png)
 
-![Execution Time](plots/20260423_212241/execTimeChart.png)
+![Execution Time](plots/20260423_213804/execTimeChart.png)
 
-![Result Distribution](plots/20260423_212241/distChart.png)
+![Result Distribution](plots/20260423_213804/distChart.png)
 <!-- PLOTS_END -->
 
 ### Key Findings
