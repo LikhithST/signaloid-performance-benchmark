@@ -1,0 +1,22 @@
+# Compiled Go binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Compiled C binaries
+*.o
+*.out
+
+# Temporary execution logs
+execution_results.txt
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
