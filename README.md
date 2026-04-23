@@ -20,12 +20,14 @@ Software Engineer with 4 years of experience in the IT field at various companie
 
 ## Performance Comparison Table
 
+<!-- TABLE_START -->
 | Method | Iterations | Dynamic Instructions | Processor Time (s) | Execution Time (ms) | Result |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Monte Carlo | 10,000 | 577,131 | 0.0198 | 934 | 106,000.00 |
 | Monte Carlo | 1,000,000 | 51,067,334 | 0.5649 | 1,394 | 106,000.00 |
 | Monte Carlo | 10,000,000 | 510,069,396 | 6.3186 | 7,127 | 105,999.67 |
 | **UxHw (Avg)** | **N/A** | **~2,510,000** | **~0.059** | **~1,432** | **106,128.00** |
+<!-- TABLE_END -->
 
 ## Signaloid Execution Plots
 
@@ -255,4 +257,3 @@ This repository also features a fully automated GitHub Actions workflow that exe
 👉 **Read the GitHub Actions Pipeline Documentation here** for details on how to configure and trigger the automated pipeline.
 
 ---
-
