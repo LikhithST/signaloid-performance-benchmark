@@ -54,7 +54,7 @@ func saveChart(configStr, filename string) {
 	payload := map[string]interface{}{
 		"version":         "3",
 		"width":           800,
-		"height":          400,
+		"height":          600,
 		"backgroundColor": "white",
 	}
 	var chartObj map[string]interface{}
@@ -227,28 +227,28 @@ func main() {
 	instrConfig := fmt.Sprintf(`{
 		"type": "line",
 		"data": { "datasets": [
-			{ "label": "Dynamic Instructions (Monte Carlo)", "data": %s, "borderColor": "red", "backgroundColor": "red", "fill": false, "tension": 0.1, "xAxisID": "x" },
-			{ "label": "Dynamic Instructions (Signaloid API)", "data": %s, "borderColor": "blue", "backgroundColor": "blue", "fill": false, "tension": 0.1, "xAxisID": "x2" }
+			{ "label": "Dynamic Instructions (Monte Carlo)", "data": %s, "borderColor": "red", "backgroundColor": "red", "fill": false, "tension": 0.1, "xAxisID": "x", "yAxisID": "y" },
+			{ "label": "Dynamic Instructions (Signaloid API)", "data": %s, "borderColor": "blue", "backgroundColor": "blue", "fill": false, "tension": 0.1, "xAxisID": "x2", "yAxisID": "y2" }
 		]},
-		"options": { "plugins": { "title": { "display": true, "text": "Dynamic Instructions vs Iterations" } }, "scales": { "x": { "type": "linear", "position": "bottom", "title": { "display": true, "text": "Iteration Value" } }, "x2": { "type": "category", "position": "top", "title": { "display": true, "text": "UxHw Trials" }, "grid": { "drawOnChartArea": false } }, "y": { "title": { "display": true, "text": "Measured Value" } } } }
+		"options": { "plugins": { "title": { "display": true, "text": "Dynamic Instructions vs Iterations" } }, "scales": { "x": { "type": "linear", "position": "bottom", "title": { "display": true, "text": "Iteration Value" } }, "x2": { "type": "category", "position": "top", "title": { "display": true, "text": "UxHw Trials" }, "grid": { "drawOnChartArea": false } }, "y": { "type": "linear", "stack": "y-axes", "stackWeight": 1, "position": "left", "title": { "display": true, "text": "Monte Carlo" } }, "y2": { "type": "linear", "stack": "y-axes", "stackWeight": 1, "position": "left", "title": { "display": true, "text": "Signaloid API" } } } }
 	}`, string(falseInstrJSON), string(trueInstrJSON))
 
 	timeConfig := fmt.Sprintf(`{
 		"type": "line",
 		"data": { "datasets": [
-			{ "label": "Processor Time (s) (Monte Carlo)", "data": %s, "borderColor": "orange", "backgroundColor": "orange", "fill": false, "tension": 0.1, "xAxisID": "x" },
-			{ "label": "Processor Time (s) (Signaloid API)", "data": %s, "borderColor": "green", "backgroundColor": "green", "fill": false, "tension": 0.1, "xAxisID": "x2" }
+			{ "label": "Processor Time (s) (Monte Carlo)", "data": %s, "borderColor": "orange", "backgroundColor": "orange", "fill": false, "tension": 0.1, "xAxisID": "x", "yAxisID": "y" },
+			{ "label": "Processor Time (s) (Signaloid API)", "data": %s, "borderColor": "green", "backgroundColor": "green", "fill": false, "tension": 0.1, "xAxisID": "x2", "yAxisID": "y2" }
 		]},
-		"options": { "plugins": { "title": { "display": true, "text": "Processor Time vs Iterations" } }, "scales": { "x": { "type": "linear", "position": "bottom", "title": { "display": true, "text": "Iteration Value" } }, "x2": { "type": "category", "position": "top", "title": { "display": true, "text": "UxHw Trials" }, "grid": { "drawOnChartArea": false } }, "y": { "title": { "display": true, "text": "Measured Value" } } } }
+		"options": { "plugins": { "title": { "display": true, "text": "Processor Time vs Iterations" } }, "scales": { "x": { "type": "linear", "position": "bottom", "title": { "display": true, "text": "Iteration Value" } }, "x2": { "type": "category", "position": "top", "title": { "display": true, "text": "UxHw Trials" }, "grid": { "drawOnChartArea": false } }, "y": { "type": "linear", "stack": "y-axes", "stackWeight": 1, "position": "left", "title": { "display": true, "text": "Monte Carlo (s)" } }, "y2": { "type": "linear", "stack": "y-axes", "stackWeight": 1, "position": "left", "title": { "display": true, "text": "Signaloid API (s)" } } } }
 	}`, string(falseTimeJSON), string(trueTimeJSON))
 
 	execTimeConfig := fmt.Sprintf(`{
 		"type": "line",
 		"data": { "datasets": [
-			{ "label": "Execution Time (ms) (Monte Carlo)", "data": %s, "borderColor": "purple", "backgroundColor": "purple", "fill": false, "tension": 0.1, "xAxisID": "x" },
-			{ "label": "Execution Time (ms) (Signaloid API)", "data": %s, "borderColor": "teal", "backgroundColor": "teal", "fill": false, "tension": 0.1, "xAxisID": "x2" }
+			{ "label": "Execution Time (ms) (Monte Carlo)", "data": %s, "borderColor": "purple", "backgroundColor": "purple", "fill": false, "tension": 0.1, "xAxisID": "x", "yAxisID": "y" },
+			{ "label": "Execution Time (ms) (Signaloid API)", "data": %s, "borderColor": "teal", "backgroundColor": "teal", "fill": false, "tension": 0.1, "xAxisID": "x2", "yAxisID": "y2" }
 		]},
-		"options": { "plugins": { "title": { "display": true, "text": "Execution Time vs Iterations" } }, "scales": { "x": { "type": "linear", "position": "bottom", "title": { "display": true, "text": "Iteration Value" } }, "x2": { "type": "category", "position": "top", "title": { "display": true, "text": "UxHw Trials" }, "grid": { "drawOnChartArea": false } }, "y": { "title": { "display": true, "text": "Measured Value (ms)" } } } }
+		"options": { "plugins": { "title": { "display": true, "text": "Execution Time vs Iterations" } }, "scales": { "x": { "type": "linear", "position": "bottom", "title": { "display": true, "text": "Iteration Value" } }, "x2": { "type": "category", "position": "top", "title": { "display": true, "text": "UxHw Trials" }, "grid": { "drawOnChartArea": false } }, "y": { "type": "linear", "stack": "y-axes", "stackWeight": 1, "position": "left", "title": { "display": true, "text": "Monte Carlo (ms)" } }, "y2": { "type": "linear", "stack": "y-axes", "stackWeight": 1, "position": "left", "title": { "display": true, "text": "Signaloid API (ms)" } } } }
 	}`, string(falseExecTimeJSON), string(trueExecTimeJSON))
 
 	distConfig := fmt.Sprintf(`{
