@@ -49,12 +49,13 @@ jobs:
 
           go run automation/plot_results.go
           go run automation/archive_json.go
+          go run automation/update_readme.go
 
       - name: Commit and Push Results
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add plots/ history/ *.json
+          git add plots/ history/ *.json README.md
           if ! git diff-index --quiet HEAD; then
             git commit -m "chore: Auto-generate plots and archive execution history [skip ci]"
             git push
