@@ -1,0 +1,330 @@
+{
+  "tsk_31f427a8bf074a3fb665cffcc5fc6ae5": {
+    "BuildID": "bld_828fa193ebd34bb183f7d2e7b175c78b",
+    "CreatedAt": 1776974052220,
+    "DataSources": [],
+    "FinishedAt": 1776974053816,
+    "IsPublic": false,
+    "Owner": "usr_f893245b5eb240a6b519174bb34de4db",
+    "SmallOutput": null,
+    "StartedAt": 1776974052266,
+    "Stats": {
+      "DynamicInstructions": 51063471,
+      "ExecutionTimeInMilliseconds": 1458,
+      "ProcessorTime": 0.630581
+    },
+    "Status": "Completed",
+    "StatusTransitions": [
+      {
+        "Message": "Task accepted.",
+        "Status": "Accepted",
+        "Timestamp": 1776974052220
+      },
+      {
+        "Message": "StatusController: Set Task tsk_31f427a8bf074a3fb665cffcc5fc6ae5 status as 'Initializing'",
+        "Status": "Initialising",
+        "Timestamp": 1776974052266
+      },
+      {
+        "Message": "StatusController: Set Task tsk_31f427a8bf074a3fb665cffcc5fc6ae5 status as 'In Progress'",
+        "Status": "In Progress",
+        "Timestamp": 1776974052273
+      },
+      {
+        "Message": "StatusController: Set Task tsk_31f427a8bf074a3fb665cffcc5fc6ae5 status as 'Completed'",
+        "Status": "Completed",
+        "Timestamp": 1776974053816
+      }
+    ],
+    "TaskID": "tsk_31f427a8bf074a3fb665cffcc5fc6ae5",
+    "UpdatedAt": 1776974053816,
+    "iteration_value": "1000000"
+  },
+  "tsk_68ca42bf2f924b839a0c64ddec98a2cf": {
+    "BuildID": "bld_828fa193ebd34bb183f7d2e7b175c78b",
+    "CreatedAt": 1776974049436,
+    "DataSources": [],
+    "FinishedAt": 1776974050539,
+    "IsPublic": false,
+    "Owner": "usr_f893245b5eb240a6b519174bb34de4db",
+    "SmallOutput": null,
+    "StartedAt": 1776974049465,
+    "Stats": {
+      "DynamicInstructions": 5164912,
+      "ExecutionTimeInMilliseconds": 955,
+      "ProcessorTime": 0.074214
+    },
+    "Status": "Completed",
+    "StatusTransitions": [
+      {
+        "Message": "Task accepted.",
+        "Status": "Accepted",
+        "Timestamp": 1776974049436
+      },
+      {
+        "Message": "StatusController: Set Task tsk_68ca42bf2f924b839a0c64ddec98a2cf status as 'Initializing'",
+        "Status": "Initialising",
+        "Timestamp": 1776974049465
+      },
+      {
+        "Message": "StatusController: Set Task tsk_68ca42bf2f924b839a0c64ddec98a2cf status as 'In Progress'",
+        "Status": "In Progress",
+        "Timestamp": 1776974049503
+      },
+      {
+        "Message": "StatusController: Set Task tsk_68ca42bf2f924b839a0c64ddec98a2cf status as 'Completed'",
+        "Status": "Completed",
+        "Timestamp": 1776974050539
+      }
+    ],
+    "TaskID": "tsk_68ca42bf2f924b839a0c64ddec98a2cf",
+    "UpdatedAt": 1776974050539,
+    "iteration_value": "100000"
+  },
+  "tsk_6c411d539d4b42099d6fe67ad37e4951": {
+    "BuildID": "bld_828fa193ebd34bb183f7d2e7b175c78b",
+    "CreatedAt": 1776974055244,
+    "DataSources": [],
+    "FinishedAt": 1776974062610,
+    "IsPublic": false,
+    "Owner": "usr_f893245b5eb240a6b519174bb34de4db",
+    "SmallOutput": null,
+    "StartedAt": 1776974055274,
+    "Stats": {
+      "DynamicInstructions": 510069932,
+      "ExecutionTimeInMilliseconds": 7160,
+      "ProcessorTime": 6.118292
+    },
+    "Status": "Completed",
+    "StatusTransitions": [
+      {
+        "Message": "Task accepted.",
+        "Status": "Accepted",
+        "Timestamp": 1776974055244
+      },
+      {
+        "Message": "StatusController: Set Task tsk_6c411d539d4b42099d6fe67ad37e4951 status as 'Initializing'",
+        "Status": "Initialising",
+        "Timestamp": 1776974055274
+      },
+      {
+        "Message": "StatusController: Set Task tsk_6c411d539d4b42099d6fe67ad37e4951 status as 'In Progress'",
+        "Status": "In Progress",
+        "Timestamp": 1776974055282
+      },
+      {
+        "Message": "StatusController: Set Task tsk_6c411d539d4b42099d6fe67ad37e4951 status as 'Completed'",
+        "Status": "Completed",
+        "Timestamp": 1776974062610
+      }
+    ],
+    "TaskID": "tsk_6c411d539d4b42099d6fe67ad37e4951",
+    "UpdatedAt": 1776974062610,
+    "iteration_value": "10000000"
+  },
+  "tsk_6ca94ac99bdd4a118f3d4729be96f1f4": {
+    "BuildID": "bld_828fa193ebd34bb183f7d2e7b175c78b",
+    "CreatedAt": 1776974046545,
+    "DataSources": [],
+    "FinishedAt": 1776974047538,
+    "IsPublic": false,
+    "Owner": "usr_f893245b5eb240a6b519174bb34de4db",
+    "SmallOutput": null,
+    "StartedAt": 1776974046585,
+    "Stats": {
+      "DynamicInstructions": 581466,
+      "ExecutionTimeInMilliseconds": 865,
+      "ProcessorTime": 0.02061
+    },
+    "Status": "Completed",
+    "StatusTransitions": [
+      {
+        "Message": "Task accepted.",
+        "Status": "Accepted",
+        "Timestamp": 1776974046545
+      },
+      {
+        "Message": "StatusController: Set Task tsk_6ca94ac99bdd4a118f3d4729be96f1f4 status as 'Initializing'",
+        "Status": "Initialising",
+        "Timestamp": 1776974046585
+      },
+      {
+        "Message": "StatusController: Set Task tsk_6ca94ac99bdd4a118f3d4729be96f1f4 status as 'In Progress'",
+        "Status": "In Progress",
+        "Timestamp": 1776974046592
+      },
+      {
+        "Message": "StatusController: Set Task tsk_6ca94ac99bdd4a118f3d4729be96f1f4 status as 'Completed'",
+        "Status": "Completed",
+        "Timestamp": 1776974047538
+      }
+    ],
+    "TaskID": "tsk_6ca94ac99bdd4a118f3d4729be96f1f4",
+    "UpdatedAt": 1776974047538,
+    "iteration_value": "10000"
+  },
+  "tsk_9bf2e99599ed4ae0bb0d4c7f4fac9bcb": {
+    "BuildID": "bld_828fa193ebd34bb183f7d2e7b175c78b",
+    "CreatedAt": 1776974038344,
+    "DataSources": [],
+    "FinishedAt": 1776974039338,
+    "IsPublic": false,
+    "Owner": "usr_f893245b5eb240a6b519174bb34de4db",
+    "SmallOutput": null,
+    "StartedAt": 1776974038371,
+    "Stats": {
+      "DynamicInstructions": 71060,
+      "ExecutionTimeInMilliseconds": 883,
+      "ProcessorTime": 0.011979
+    },
+    "Status": "Completed",
+    "StatusTransitions": [
+      {
+        "Message": "Task accepted.",
+        "Status": "Accepted",
+        "Timestamp": 1776974038344
+      },
+      {
+        "Message": "StatusController: Set Task tsk_9bf2e99599ed4ae0bb0d4c7f4fac9bcb status as 'Initializing'",
+        "Status": "Initialising",
+        "Timestamp": 1776974038371
+      },
+      {
+        "Message": "StatusController: Set Task tsk_9bf2e99599ed4ae0bb0d4c7f4fac9bcb status as 'In Progress'",
+        "Status": "In Progress",
+        "Timestamp": 1776974038378
+      },
+      {
+        "Message": "StatusController: Set Task tsk_9bf2e99599ed4ae0bb0d4c7f4fac9bcb status as 'Completed'",
+        "Status": "Completed",
+        "Timestamp": 1776974039338
+      }
+    ],
+    "TaskID": "tsk_9bf2e99599ed4ae0bb0d4c7f4fac9bcb",
+    "UpdatedAt": 1776974039338,
+    "iteration_value": "10"
+  },
+  "tsk_cec70673f73a41548d44f28031514866": {
+    "BuildID": "bld_828fa193ebd34bb183f7d2e7b175c78b",
+    "CreatedAt": 1776974043844,
+    "DataSources": [],
+    "FinishedAt": 1776974044826,
+    "IsPublic": false,
+    "Owner": "usr_f893245b5eb240a6b519174bb34de4db",
+    "SmallOutput": null,
+    "StartedAt": 1776974043872,
+    "Stats": {
+      "DynamicInstructions": 121379,
+      "ExecutionTimeInMilliseconds": 863,
+      "ProcessorTime": 0.013931
+    },
+    "Status": "Completed",
+    "StatusTransitions": [
+      {
+        "Message": "Task accepted.",
+        "Status": "Accepted",
+        "Timestamp": 1776974043844
+      },
+      {
+        "Message": "StatusController: Set Task tsk_cec70673f73a41548d44f28031514866 status as 'Initializing'",
+        "Status": "Initialising",
+        "Timestamp": 1776974043872
+      },
+      {
+        "Message": "StatusController: Set Task tsk_cec70673f73a41548d44f28031514866 status as 'In Progress'",
+        "Status": "In Progress",
+        "Timestamp": 1776974043879
+      },
+      {
+        "Message": "StatusController: Set Task tsk_cec70673f73a41548d44f28031514866 status as 'Completed'",
+        "Status": "Completed",
+        "Timestamp": 1776974044826
+      }
+    ],
+    "TaskID": "tsk_cec70673f73a41548d44f28031514866",
+    "UpdatedAt": 1776974044826,
+    "iteration_value": "1000"
+  },
+  "tsk_e10152c0413a439eac2f649ea2c830d9": {
+    "BuildID": "bld_828fa193ebd34bb183f7d2e7b175c78b",
+    "CreatedAt": 1776974035095,
+    "DataSources": [],
+    "FinishedAt": 1776974036209,
+    "IsPublic": false,
+    "Owner": "usr_f893245b5eb240a6b519174bb34de4db",
+    "SmallOutput": null,
+    "StartedAt": 1776974035155,
+    "Stats": {
+      "DynamicInstructions": 69104,
+      "ExecutionTimeInMilliseconds": 914,
+      "ProcessorTime": 0.013553
+    },
+    "Status": "Completed",
+    "StatusTransitions": [
+      {
+        "Message": "Task accepted.",
+        "Status": "Accepted",
+        "Timestamp": 1776974035095
+      },
+      {
+        "Message": "StatusController: Set Task tsk_e10152c0413a439eac2f649ea2c830d9 status as 'Initializing'",
+        "Status": "Initialising",
+        "Timestamp": 1776974035155
+      },
+      {
+        "Message": "StatusController: Set Task tsk_e10152c0413a439eac2f649ea2c830d9 status as 'In Progress'",
+        "Status": "In Progress",
+        "Timestamp": 1776974035218
+      },
+      {
+        "Message": "StatusController: Set Task tsk_e10152c0413a439eac2f649ea2c830d9 status as 'Completed'",
+        "Status": "Completed",
+        "Timestamp": 1776974036209
+      }
+    ],
+    "TaskID": "tsk_e10152c0413a439eac2f649ea2c830d9",
+    "UpdatedAt": 1776974036209,
+    "iteration_value": "1"
+  },
+  "tsk_f4c5c8d7ab9d45fda5d09cf874786628": {
+    "BuildID": "bld_828fa193ebd34bb183f7d2e7b175c78b",
+    "CreatedAt": 1776974041020,
+    "DataSources": [],
+    "FinishedAt": 1776974042014,
+    "IsPublic": false,
+    "Owner": "usr_f893245b5eb240a6b519174bb34de4db",
+    "SmallOutput": null,
+    "StartedAt": 1776974041049,
+    "Stats": {
+      "DynamicInstructions": 74083,
+      "ExecutionTimeInMilliseconds": 832,
+      "ProcessorTime": 0.013106
+    },
+    "Status": "Completed",
+    "StatusTransitions": [
+      {
+        "Message": "Task accepted.",
+        "Status": "Accepted",
+        "Timestamp": 1776974041020
+      },
+      {
+        "Message": "StatusController: Set Task tsk_f4c5c8d7ab9d45fda5d09cf874786628 status as 'Initializing'",
+        "Status": "Initialising",
+        "Timestamp": 1776974041049
+      },
+      {
+        "Message": "StatusController: Set Task tsk_f4c5c8d7ab9d45fda5d09cf874786628 status as 'In Progress'",
+        "Status": "In Progress",
+        "Timestamp": 1776974041106
+      },
+      {
+        "Message": "StatusController: Set Task tsk_f4c5c8d7ab9d45fda5d09cf874786628 status as 'Completed'",
+        "Status": "Completed",
+        "Timestamp": 1776974042014
+      }
+    ],
+    "TaskID": "tsk_f4c5c8d7ab9d45fda5d09cf874786628",
+    "UpdatedAt": 1776974042014,
+    "iteration_value": "100"
+  }
+}

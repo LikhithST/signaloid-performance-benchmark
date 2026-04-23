@@ -1,0 +1,98 @@
+[
+  {
+    "Stats": {
+      "DynamicInstructions": 74083,
+      "ExecutionTimeInMilliseconds": 832,
+      "ProcessorTime": 0.013106
+    },
+    "buildID": "bld_828fa193ebd34bb183f7d2e7b175c78b",
+    "iteration_value": "100",
+    "output": "106034.31Ux04000000000000000040F9E325000000000000000140F9E325000000008000000000000000\n",
+    "taskId": "tsk_f4c5c8d7ab9d45fda5d09cf874786628",
+    "uxhw": false
+  },
+  {
+    "Stats": {
+      "DynamicInstructions": 51063471,
+      "ExecutionTimeInMilliseconds": 1458,
+      "ProcessorTime": 0.630581
+    },
+    "buildID": "bld_828fa193ebd34bb183f7d2e7b175c78b",
+    "iteration_value": "1000000",
+    "output": "105999.71Ux04000000000000000040F9E0FB400000000000000140F9E0FB400000008000000000000000\n",
+    "taskId": "tsk_31f427a8bf074a3fb665cffcc5fc6ae5",
+    "uxhw": false
+  },
+  {
+    "Stats": {
+      "DynamicInstructions": 5164912,
+      "ExecutionTimeInMilliseconds": 955,
+      "ProcessorTime": 0.074214
+    },
+    "buildID": "bld_828fa193ebd34bb183f7d2e7b175c78b",
+    "iteration_value": "100000",
+    "output": "106000.93Ux04000000000000000040F9E10EE00000000000000140F9E10EE00000008000000000000000\n",
+    "taskId": "tsk_68ca42bf2f924b839a0c64ddec98a2cf",
+    "uxhw": false
+  },
+  {
+    "Stats": {
+      "DynamicInstructions": 510069932,
+      "ExecutionTimeInMilliseconds": 7160,
+      "ProcessorTime": 6.118292
+    },
+    "buildID": "bld_828fa193ebd34bb183f7d2e7b175c78b",
+    "iteration_value": "10000000",
+    "output": "105999.98Ux04000000000000000040F9E0FFA00000000000000140F9E0FFA00000008000000000000000\n",
+    "taskId": "tsk_6c411d539d4b42099d6fe67ad37e4951",
+    "uxhw": false
+  },
+  {
+    "Stats": {
+      "DynamicInstructions": 581466,
+      "ExecutionTimeInMilliseconds": 865,
+      "ProcessorTime": 0.02061
+    },
+    "buildID": "bld_828fa193ebd34bb183f7d2e7b175c78b",
+    "iteration_value": "10000",
+    "output": "105999.67Ux04000000000000000040F9E0FAA00000000000000140F9E0FAA00000008000000000000000\n",
+    "taskId": "tsk_6ca94ac99bdd4a118f3d4729be96f1f4",
+    "uxhw": false
+  },
+  {
+    "Stats": {
+      "DynamicInstructions": 71060,
+      "ExecutionTimeInMilliseconds": 883,
+      "ProcessorTime": 0.011979
+    },
+    "buildID": "bld_828fa193ebd34bb183f7d2e7b175c78b",
+    "iteration_value": "10",
+    "output": "105897.69Ux04000000000000000040F9DA9B000000000000000140F9DA9B000000008000000000000000\n",
+    "taskId": "tsk_9bf2e99599ed4ae0bb0d4c7f4fac9bcb",
+    "uxhw": false
+  },
+  {
+    "Stats": {
+      "DynamicInstructions": 121379,
+      "ExecutionTimeInMilliseconds": 863,
+      "ProcessorTime": 0.013931
+    },
+    "buildID": "bld_828fa193ebd34bb183f7d2e7b175c78b",
+    "iteration_value": "1000",
+    "output": "106022.68Ux04000000000000000040F9E26AC00000000000000140F9E26AC00000008000000000000000\n",
+    "taskId": "tsk_cec70673f73a41548d44f28031514866",
+    "uxhw": false
+  },
+  {
+    "Stats": {
+      "DynamicInstructions": 69104,
+      "ExecutionTimeInMilliseconds": 914,
+      "ProcessorTime": 0.013553
+    },
+    "buildID": "bld_828fa193ebd34bb183f7d2e7b175c78b",
+    "iteration_value": "1",
+    "output": "106934.74Ux04000000000000000040FA1B6BE00000000000000140FA1B6BE00000008000000000000000\n",
+    "taskId": "tsk_e10152c0413a439eac2f649ea2c830d9",
+    "uxhw": false
+  }
+]
