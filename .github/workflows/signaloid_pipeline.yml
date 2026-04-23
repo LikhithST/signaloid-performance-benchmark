@@ -11,10 +11,12 @@ on:
 env:
   # Set your pipeline variables here
   CORE_ID: "cor_b21e4de9927158c1a5b603c2affb8a09"
-  CFILENAME: "automation/single-file-source-code/uniform-distribution-without-uxhw.c"
-  UXHW: "false"
-  MIN_VAL: "1"
-  MAX_VAL: "10000000"
+  CFILENAME_1: "automation/single-file-source-code/uniform-distribution-without-uxhw.c"
+  UXHW_1: "false"
+  CFILENAME_2: "automation/single-file-source-code/uniform-distribution-with-uxhw.c"
+  UXHW_2: "true"
+  MIN_VAL: "100"
+  MAX_VAL: "10000"
 
 jobs:
   execute-pipeline:
@@ -35,10 +37,16 @@ jobs:
           # Securely inject the API key from GitHub Secrets
           API_KEY: ${{ secrets.API_KEY }}
         run: |
-          echo "Starting Signaloid Pipeline..."
-          go run automation/create_build.go "$CFILENAME" "$UXHW"
-          go run automation/create_task.go "$CFILENAME" "$MIN_VAL" "$MAX_VAL"
-          go run automation/fetch_outputs.go "$CFILENAME"
+          echo "Starting Signaloid Pipeline for File 1 (Without UxHw)..."
+          go run automation/create_build.go "$CFILENAME_1" "$UXHW_1"
+          go run automation/create_task.go "$CFILENAME_1" "$MIN_VAL" "$MAX_VAL"
+          go run automation/fetch_outputs.go "$CFILENAME_1"
+
+          echo "Starting Signaloid Pipeline for File 2 (With UxHw)..."
+          go run automation/create_build.go "$CFILENAME_2" "$UXHW_2"
+          go run automation/create_task.go "$CFILENAME_2" "$MIN_VAL" "$MAX_VAL"
+          go run automation/fetch_outputs.go "$CFILENAME_2"
+
           go run automation/plot_results.go
           go run automation/archive_json.go
 
