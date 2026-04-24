@@ -1,18 +1,16 @@
-# About Me
-Software Engineer with 4 years of experience in the IT field at various companies, including Robert Bosch GmbH, specializing in cloud-native systems and system reliability. Experienced in developing microservices (Go, JavaScript, Python) and managing the full application lifecycle using Docker and Kubernetes across AWS and Azure, implementing CI/CD pipelines and enhancing system traceability through observability tools, such as OpenTelemetry and Prometheus.
+
 
 # Table of Contents
-1. [About Me](#about-me)
-2. [Performance Benchmarking](#performance-benchmarking-monte-carlo-vs-signaloid-uxhw)
+1. [Performance Benchmarking](#performance-benchmarking-monte-carlo-vs-signaloid-uxhw)
     - [Performance Comparison Table](#performance-comparison-table)
     - [Signaloid Execution Plots](#signaloid-execution-plots)
     - [Key Findings](#key-findings)
-3. [Signaloid API Demonstration Scripts](#signaloid-api-demonstration-scripts)
-4. [signaloid_pipe Workflow](#signaloid_pipe-workflow)
-5. [Files Included](#files-included)
-6. [Prerequisites](#prerequisites)
-7. [Usage](#usage)
-8. [Automated CI/CD Pipeline](#automated-cicd-pipeline)
+2. [Signaloid API Demonstration Scripts](#signaloid-api-demonstration-scripts)
+3. [signaloid_pipe Workflow](#signaloid_pipe-workflow)
+4. [Files Included](#files-included)
+5. [Prerequisites](#prerequisites)
+6. [Usage](#usage)
+7. [Automated CI/CD Pipeline](#automated-cicd-pipeline)
 
 
 
@@ -259,6 +257,6 @@ To run these scripts, you need the following installed on your system:
 
 This repository also features a fully automated GitHub Actions workflow that executes both the Monte Carlo and UxHw C programs, fetches their execution statistics, generates performance plots, and commits the results back to the repository.
 
-👉 **Read the GitHub Actions Pipeline Documentation here** for details on how to configure and trigger the automated pipeline.
+👉 [**Read the GitHub Actions Pipeline Documentation here**](https://github.com/LikhithST/signaloid-performance-benchmark/blob/main/.github/workflows/README.md) for details on how to configure and trigger the automated pipeline.
 
 ---
