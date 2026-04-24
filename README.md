@@ -22,15 +22,15 @@
 <!-- TABLE_START -->
 | Method | Iterations | Dynamic Instructions | Processor Time (s) | Execution Time (ms) | Result |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Monte Carlo | 1 | 71,117 | 0.0124 | 876 | 106,569.46 |
-| Monte Carlo | 10 | 67,367 | 0.0124 | 864 | 106,015.42 |
-| Monte Carlo | 100 | 71,952 | 0.0135 | 983 | 106,028.44 |
-| Monte Carlo | 1,000 | 121,315 | 0.0247 | 778 | 105,986.28 |
-| Monte Carlo | 10,000 | 579,641 | 0.0216 | 803 | 105,998.08 |
-| Monte Carlo | 100,000 | 5,158,386 | 0.0730 | 946 | 106,002.22 |
-| Monte Carlo | 1,000,000 | 51,058,483 | 0.6125 | 1,445 | 106,000.62 |
-| Monte Carlo | 10,000,000 | 510,068,941 | 6.1039 | 7,015 | 105,999.90 |
-| **UxHw (Avg)** | **N/A** | **~75,652** | **~0.0182** | **~893** | **106,000.00** |
+| Monte Carlo | 1 | 69,140 | 0.0113 | 850 | 105,471.53 |
+| Monte Carlo | 10 | 68,422 | 0.0360 | 913 | 106,029.65 |
+| Monte Carlo | 100 | 73,021 | 0.0116 | 871 | 106,123.92 |
+| Monte Carlo | 1,000 | 118,085 | 0.0147 | 930 | 106,001.77 |
+| Monte Carlo | 10,000 | 576,190 | 0.0237 | 892 | 106,003.05 |
+| Monte Carlo | 100,000 | 5,161,986 | 0.0730 | 985 | 106,000.01 |
+| Monte Carlo | 1,000,000 | 51,071,334 | 0.6313 | 1,515 | 105,999.74 |
+| Monte Carlo | 10,000,000 | 510,071,368 | 5.2933 | 6,172 | 105,999.87 |
+| **UxHw (Avg)** | **N/A** | **~75,652** | **~0.0145** | **~898** | **106,000.00** |
 <!-- TABLE_END -->
 
 ## Signaloid Execution Plots
@@ -44,13 +44,13 @@ The generated plots include:
 4. **`distChart.png`**: A clustered histogram showing the probability density distribution of the portfolio value calculation outputs.
 
 <!-- PLOTS_START -->
-![Dynamic Instructions](plots/20260424_003522/instrChart.png)
+![Dynamic Instructions](plots/20260424_005158/instrChart.png)
 
-![Processor Time](plots/20260424_003522/processorTimeChart.png)
+![Processor Time](plots/20260424_005158/processorTimeChart.png)
 
-![Execution Time](plots/20260424_003522/execTimeChart.png)
+![Execution Time](plots/20260424_005158/execTimeChart.png)
 
-![Result Distribution](plots/20260424_003522/distChart.png)
+![Result Distribution](plots/20260424_005158/distChart.png)
 <!-- PLOTS_END -->
 
 ## Key Findings
