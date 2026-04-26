@@ -169,7 +169,7 @@ echo ""
 
 ---
 
-## Files Included
+## Create scripts using example script template
 
 ### 1. `run_signaloid_pipe_with_uxhw.sh`
 This script submits a C program that leverages Signaloid's Uncertainty API (`uxhw.h`).
