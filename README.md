@@ -25,15 +25,15 @@ This repository features a GitHub Actions workflow that executes both the Monte 
 <!-- TABLE_START -->
 | Method | Iterations | Dynamic Instructions | Processor Time (s) | Execution Time (ms) | Result |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Monte Carlo | 1 | 68,633 | 0.0124 | 815 | 106,535.54 |
-| Monte Carlo | 10 | 69,124 | 0.0138 | 864 | 106,159.15 |
-| Monte Carlo | 100 | 75,015 | 0.0130 | 872 | 105,959.35 |
-| Monte Carlo | 1,000 | 113,705 | 0.0140 | 863 | 105,995.56 |
-| Monte Carlo | 10,000 | 572,079 | 0.0188 | 861 | 105,993.72 |
-| Monte Carlo | 100,000 | 5,170,855 | 0.0829 | 995 | 105,999.16 |
-| Monte Carlo | 1,000,000 | 51,063,175 | 0.5508 | 1,355 | 106,000.10 |
-| Monte Carlo | 10,000,000 | 510,067,541 | 6.1160 | 7,009 | 106,000.19 |
-| **UxHw (Avg)** | **N/A** | **~75,652** | **~0.0188** | **~890** | **106,000.00** |
+| Monte Carlo | 1 | 69,090 | 0.0150 | 827 | 105,178.08 |
+| Monte Carlo | 10 | 67,704 | 0.0123 | 871 | 105,840.41 |
+| Monte Carlo | 100 | 73,903 | 0.0215 | 968 | 105,981.34 |
+| Monte Carlo | 1,000 | 121,224 | 0.0133 | 873 | 105,969.79 |
+| Monte Carlo | 10,000 | 577,057 | 0.0162 | 879 | 106,003.89 |
+| Monte Carlo | 100,000 | 5,168,627 | 0.0758 | 894 | 105,998.11 |
+| Monte Carlo | 1,000,000 | 51,069,185 | 0.6131 | 1,504 | 105,999.47 |
+| Monte Carlo | 10,000,000 | 510,069,334 | 6.3250 | 7,253 | 105,999.81 |
+| **UxHw (Avg)** | **N/A** | **~75,652** | **~0.0139** | **~861** | **106,000.00** |
 <!-- TABLE_END -->
 
 ## Signaloid Execution Plots
@@ -47,13 +47,13 @@ The generated plots include:
 4. **`distChart.png`**: A clustered histogram showing the probability density distribution of the portfolio value calculation outputs.
 
 <!-- PLOTS_START -->
-![Dynamic Instructions](plots/20260426_232326/instrChart.png)
+![Dynamic Instructions](plots/20260426_234353/instrChart.png)
 
-![Processor Time](plots/20260426_232326/processorTimeChart.png)
+![Processor Time](plots/20260426_234353/processorTimeChart.png)
 
-![Execution Time](plots/20260426_232326/execTimeChart.png)
+![Execution Time](plots/20260426_234353/execTimeChart.png)
 
-![Result Distribution](plots/20260426_232326/distChart.png)
+![Result Distribution](plots/20260426_234353/distChart.png)
 <!-- PLOTS_END -->
 
 ## Key Findings

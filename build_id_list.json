@@ -1,12 +1,12 @@
 {
   "uniform-distribution-with-uxhw.c": {
-    "time": "2026-04-26T23:22:56Z",
-    "build-id": "bld_48cb37f149da46b2b6898da951b78df8",
+    "time": "2026-04-26T23:43:25Z",
+    "build-id": "bld_6ab89c4c417b43a0aa2e8ecad6a42710",
     "uxhw": true
   },
   "uniform-distribution-without-uxhw.c": {
-    "time": "2026-04-26T23:22:19Z",
-    "build-id": "bld_7732258a1b79421989367f94c13bf326",
+    "time": "2026-04-26T23:42:48Z",
+    "build-id": "bld_85bc347c800e49339cd03a565c6d9624",
     "uxhw": false
   }
 }
